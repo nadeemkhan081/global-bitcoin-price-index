@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Grid } from "@material-ui/core";
+import BitcoinPriceChart from "./BitcoinPriceChart";
+import BitcoinPrice from "./BitcoinPrice";
+import Appbar from "./Appbar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="md">
+      <Appbar />
+      <Grid container spacing={4} style={{ marginTop: "120px" }}>
+        <Grid item xs={6}>
+          <BitcoinPrice />
+        </Grid>
+        <Grid item xs={8} style={{height: '200px'}}>
+          <BitcoinPriceChart />
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
